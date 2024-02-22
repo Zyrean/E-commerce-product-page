@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
+import ButtonDefault from "../../ui/ButtonDefault";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.cart);
@@ -27,9 +28,7 @@ function Cart() {
             ))}
           </ul>
 
-          <button className="mb-0 w-full rounded-xl bg-orange-400 py-4 font-bold text-white">
-            Checkout
-          </button>
+          <ButtonDefault>Chekcout</ButtonDefault>
         </>
       )}
     </div>
