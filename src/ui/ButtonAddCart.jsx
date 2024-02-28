@@ -24,7 +24,7 @@ function ButtonAddCart({ type }) {
 
   return (
     <button
-      className="rounded-xl bg-orange-400 px-4 py-4 shadow-lg shadow-orange-200"
+      className="rounded-xl bg-orange-400 px-4 py-4 shadow-lg shadow-orange-200 transition-all hover:-translate-y-1 hover:duration-500 lg:flex-auto lg:hover:scale-105"
       onClick={handleAddItem}
     >
       <div className="flex justify-center gap-4 text-white">

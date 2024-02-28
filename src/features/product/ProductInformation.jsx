@@ -6,6 +6,8 @@ function ProductInformation({ type }) {
   const product = useSelector(getProductByType(type));
   const dispatch = useDispatch();
 
+  console.log(product);
+
   const {
     company,
     name,
@@ -29,7 +31,9 @@ function ProductInformation({ type }) {
   const colorType = type === "women" ? "bg-red-200" : "bg-green-300";
 
   return (
-    <div className="flex flex-col gap-4">
+    // Iteminformation
+
+    <div className="flex flex-col gap-4 lg:max-w-5xl lg:gap-6">
       <div className="flex items-center justify-between">
         <p className="font-bold uppercase tracking-wider text-orange-500">
           {company}
@@ -38,16 +42,15 @@ function ProductInformation({ type }) {
           <p className="text-green-900">{type}</p>
         </div>
       </div>
-      <h1 className="text-3xl font-bold">{name}</h1>
-      <p className="font-medium text-stone-400">{description}</p>
-
-      <div className="flex items-center justify-between space-y-6">
+      <h1 className="text-3xl font-bold lg:text-5xl">{name}</h1>
+      <p className="font-medium text-stone-400 lg:text-lg">{description}</p>
+      <div className="flex items-center justify-between space-y-6 lg:flex-col lg:items-start lg:space-y-2 ">
         <div className="flex items-center gap-4">
           <p className="text-3xl font-bold"> {`$${totalPrice}.00`}</p>
           <div className="rounded-md bg-orange-100 px-3">
-            {onSale ? (
+            {onSale && (
               <span className="font-bold text-orange-500">{`${salePercent}%`}</span>
-            ) : null}
+            )}
           </div>
         </div>
         {onSale && (
@@ -55,17 +58,17 @@ function ProductInformation({ type }) {
         )}
       </div>
 
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-between rounded-xl bg-stone-100 px-8 py-3">
+      <div className="flex flex-col gap-4 lg:flex-row lg:justify-between">
+        <div className="flex items-center justify-between rounded-xl bg-stone-100 px-8 py-3 lg:flex-1">
           <button
-            className="text-2xl font-bold text-orange-500"
+            className="text-2xl font-bold text-orange-500 hover:scale-125"
             onClick={handleDecrease}
           >
             -
           </button>
           <span className="font-bold">{amount}</span>
           <button
-            className="text-2xl font-bold text-orange-500"
+            className="text-2xl font-bold text-orange-500 hover:scale-125"
             onClick={handleIncrease}
           >
             +

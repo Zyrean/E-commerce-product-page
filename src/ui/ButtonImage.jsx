@@ -1,7 +1,7 @@
 function ButtonImage({ type, onHandleImgIndex }) {
   return (
     <button
-      className="flex h-10 w-10 items-center justify-center rounded-full bg-white"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-white hover:bg-orange-300"
       onClick={onHandleImgIndex}
     >
       <div className="flex h-3 w-3 justify-center">
