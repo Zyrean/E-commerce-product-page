@@ -63,7 +63,7 @@ function Header() {
                 )}
 
                 <img
-                  className="lg:h-7"
+                  className="lg:h-5"
                   src="../../images/icon-cart.svg"
                   alt=""
                 />
@@ -73,7 +73,7 @@ function Header() {
                 <img
                   src="../../images/image-avatar.png"
                   alt=""
-                  className="h-8 lg:h-14"
+                  className="h-8 lg:h-12"
                 />
               </div>
             </div>
