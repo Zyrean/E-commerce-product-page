@@ -3,23 +3,35 @@ import AppLayout from "./components/AppLayout";
 import Collections from "./pages/Collections";
 import MenShoes from "./pages/MenShoes";
 import WomenShoes from "./pages/WomenShoes";
-import About from "./pages/About";
+import Kids from "./pages/Kids";
 import Contact from "./pages/Contact";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // staleTime: 60 * 1000,
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route index element={<Collections />} />
-          <Route path="collections" element={<Collections />} />
-          <Route path="menShoes" element={<MenShoes />} />
-          <Route path="womenShoes" element={<WomenShoes />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<Collections />} />
+            <Route path="collections" element={<Collections />} />
+            <Route path="menShoes" element={<MenShoes />} />
+            <Route path="womenShoes" element={<WomenShoes />} />
+            <Route path="kids" element={<Kids />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

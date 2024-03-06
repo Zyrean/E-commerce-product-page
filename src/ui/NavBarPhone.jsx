@@ -18,8 +18,8 @@ function NavBarPhone({ onHandleNavBar }) {
           <NavBarPhoneItem to="womenShoes" onHandleNavBar={onHandleNavBar}>
             Women
           </NavBarPhoneItem>
-          <NavBarPhoneItem to="about" onHandleNavBar={onHandleNavBar}>
-            About
+          <NavBarPhoneItem to="kids" onHandleNavBar={onHandleNavBar}>
+            Kids
           </NavBarPhoneItem>
           <NavBarPhoneItem to="contact" onHandleNavBar={onHandleNavBar}>
             Contact

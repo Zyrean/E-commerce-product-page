@@ -16,8 +16,8 @@ function NavBar() {
         <NavLink to="/womenShoes" className={navStyle}>
           Women
         </NavLink>
-        <NavLink to="/about" className={navStyle}>
-          About
+        <NavLink to="/kids" className={navStyle}>
+          Kids
         </NavLink>
         <NavLink to="/contact" className={navStyle}>
           Contact
