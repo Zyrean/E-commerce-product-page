@@ -1,10 +1,10 @@
-import { getShoes } from "../services/apiShoes";
+// import { getShoes } from "../services/apiShoes";
 
 function Contact() {
   return (
     <>
       <div>Contact</div>
-      <button onClick={() => getShoes()}>DATA</button>
+      {/* <button onClick={() => getShoes()}>DATA</button> */}
     </>
   );
 }

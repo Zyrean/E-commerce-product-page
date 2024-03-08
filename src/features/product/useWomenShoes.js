@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { getShoes } from "../../services/apiShoes";
+import { getWomenShoes } from "../../services/apiShoes";
 
-export function useShoes() {
+export function useWomenShoes() {
   const {
     isLoading,
     data: shoes,
     error,
   } = useQuery({
-    queryKey: ["shoes"],
-    queryFn: getShoes,
+    queryKey: ["womenShoes"],
+    // queryFn: getWomenShoes,
   });
 
   return { isLoading, error, shoes };

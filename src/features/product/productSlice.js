@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getShoes } from "../../services/apiShoes";
+// import { getShoes } from "../../services/apiShoes";
 
 const testContent = [
   {

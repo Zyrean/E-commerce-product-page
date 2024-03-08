@@ -1,10 +1,9 @@
-import { useShoes } from "../features/product/useShoes";
-import ProductListItem from "../features/product/ProductListItem";
-import { useEffect } from "react";
-import { getShoes } from "../services/apiShoes";
+import ProductList from "../features/product/ProductList";
+import { useKidsShoes } from "../features/product/useKidsShoes";
+// import { useWomenShoes } from "../features/product/useWomenShoes";
 
 function Kids() {
-  const { isLoading, error, shoes } = useShoes();
+  const { isLoading, error, shoes } = useKidsShoes();
 
   return (
     <>
@@ -13,11 +12,7 @@ function Kids() {
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
-        <ul className="flex flex-col gap-4 px-4 py-6">
-          {shoes?.map((shoe) => (
-            <ProductListItem key={shoe.id} shoe={shoe} />
-          ))}
-        </ul>
+        <ProductList shoes={shoes} />
       )}
     </>
   );
