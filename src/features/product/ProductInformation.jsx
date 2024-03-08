@@ -1,10 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decreaseItem, getProductByType, increaseItem } from "./productSlice";
+import {
+  decreaseItem,
+  getProductById,
+  getProductByType,
+  increaseItem,
+} from "./productSlice";
 import ButtonAddCart from "../../ui/ButtonAddCart";
 
 function ProductInformation({ type }) {
   const product = useSelector(getProductByType(type));
   const dispatch = useDispatch();
+
+  // const product = useSelector(getProductById(id));
 
   console.log(product);
 

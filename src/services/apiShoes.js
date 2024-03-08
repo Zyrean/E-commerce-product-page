@@ -1,14 +1,13 @@
 import supabase from "./supabase";
 
 export async function getShoes() {
-  const { data: ShoesData, error } = await supabase.from("Shoes").select("*");
-  console.log(ShoesData);
+  const { data, error } = await supabase.from("shoes").select("*");
 
   if (error) {
     console.error(error);
 
-    throw new Error("Problems getting ShoesData");
+    throw new Error("Problems getting data");
   }
 
-  return ShoesData;
+  return data;
 }

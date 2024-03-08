@@ -1,20 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getShoes } from "../../services/apiShoes";
 
 const testContent = [
   {
     id: 1,
-    type: "men",
-    company: "Sneaker Company",
+    type: "men", ///sex
+    company: "Sneaker Company", ///brand
     name: "Fall Limited Edition Sneakers Men",
     description:
       "These low-profile sneakers are your perfect cusual wear companion.Featuring a durable rubber outer sole, tey will withstand everything the weater can offer.",
-    img: "../../../images/image-product-1.jpg",
-    amount: 1,
-    totalPrice: 125,
-    price: 250,
+    img: "../../../images/image-product-1.jpg", ///image
+    amount: 1, /// ---
+    totalPrice: 125, /// ---
+    price: 250, /// oiriginalPrice
     onSale: true,
-    salePercent: 50,
-    onSalePrice: 125,
+    salePercent: 50, /// saleAmount
+    onSalePrice: 125, /// ---
   },
   {
     id: 2,
@@ -33,8 +34,12 @@ const testContent = [
   },
 ];
 
+// const shoesData = await getShoes();
+// console.log(shoesData);
+
 const initialState = {
-  product: testContent,
+  // product: testContent,
+  // product: shoesData,
 };
 
 const productSlice = createSlice({
@@ -58,6 +63,9 @@ const productSlice = createSlice({
 
 export const getProductByType = (type) => (state) =>
   state.product.product.find((product) => product.type === type);
+
+export const getProductById = (id) => (state) =>
+  state.product.product.find((product) => product.id === id);
 
 export const { increaseItem, decreaseItem } = productSlice.actions;
 
